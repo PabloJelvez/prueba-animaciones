@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: plum;
+}
+$xs: "(max-width: 576px)";
+$lg: "(min-width: 576px)";
+.body{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 9fr 1fr;
+    grid-template-areas: 
+    'menu'
+    'main'
+    'footer'
+    ;
+    height: 100vh;
+    @media #{$lg}{
+        grid-template-areas:
+        'menu main main'
+        'menu main main'
+        'footer main main'
+        ;
+        grid-template-columns: 1.5fr 9fr;
+    
+        height: 140vh;
+    }
+}
+.menu{
+    grid-area: menu;
+    background-color: purple;
+    color: yellow;
+    display: flex;
+    justify-content: space-between;
+    @media #{$lg}{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+    }
+    
+    .tittleMenu{
+        display: flex;
+        i{
+            padding: 38px 0 0 30px;
+        }
+        h2{
+            padding: 25px 0 0 10px;
+        }
+       
+       
+    }
+    .ulMenu{
+        @media #{$lg}{
+           align-items: flex-end;
+           padding: 10px;
+        }
+        ul{
+            @media #{$lg}{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+                }
+
+            li{
+                display:none;
+                list-style: none;
+                @media #{$lg}{
+                display: flex;
+                text-align: center;
+                padding: 5px;
+                }
+                a{
+                    @media #{$lg}{
+                        color: yellow;
+                        text-decoration: none;
+                        }
+
+                }
+            }
+        }
+        
+    }
+    .iconMenu{
+        display: flex;
+    i{
+        padding: 38px 30px 0 0;
+        @media #{$lg}{
+            display: none;
+        }
+    }
+    }
+}
+.main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .filters{
+        background-color: yellow;
+        color: purple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 98vw;
+        padding: 10px;
+        @media #{$lg}{
+            width: 95%;
+        }
+    
+    select{
+        color: purple;
+        width: 290px;
+        height: 30px;
+        @media #{$lg}{
+            width: 70%;
+        }
+    }
+    
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        @media #{$lg}{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 5px;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: solid 2px purple;
+            padding:50px 0 0 0;
+            border-radius: 2%;
+            width: 300px;
+            height: 420px;
+            background-color: yellow;
+            color: purple;
+            .cardImg{
+                width: 280px;
+                height: 320px;
+                img{
+                    width: 270px;
+                    height: 300px;
+                }
+            }
+            button{
+                background-color: purple;
+                color: yellow;
+                width: 80px;
+                height: 30px;
+                margin: 10px;
+            }
+            button:hover{
+                background-color: rgb(220, 16, 210);
+            }
+            button:focus{
+                background-color: rgb(211, 134, 211);
+            }
+        }
+        .cardsNone{
+            display: flex;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            border: solid 2px purple;
+            border-radius: 2%;
+            padding:50px 0 0 0;
+            border-radius: 2%;
+            width: 300px;
+            height: 420px;
+            background-color: yellow;
+            color: purple;
+            .cardImgNone{
+                width: 280px;
+                height: 320px;
+                img{
+                    width: 270px;
+                    height: 300px;
+                }
+            }
+            p{
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+            button{
+                background-color: purple;
+                color: yellow;
+                width: 80px;
+                height: 30px;
+                margin: 10px;
+            }
+            button:hover{
+                background-color: rgb(220, 16, 210);
+            }
+            button:focus{
+                background-color: rgb(211, 134, 211);
+            }
+            @media #{$lg}{
+                display: flex;
+            }
+        }
+    }
+    .pagMain{
+        display: flex;
+        align-items: center;
+        table{
+            border-collapse: collapse;
+            width: 200px;
+            color: blue;
+            
+            tr{
+                border: solid 1px black;
+                padding: 10px;
+                text-align: center;
+               
+                td{
+                    border: solid 1px black;
+                    width: 50px;
+                    height: 30px;
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+    
+
+.footer{
+    grid-area: footer;
+    background-color: yellow;
+    color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+   
+    .iconFooter{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+       
+        i{
+            padding: 5px;
+            
+        }
+    }
+    .tittleFooter{
+        padding: 5px;
+        @media #{$lg}{
+            text-align: center;
+         }
+       
+    }
+}
