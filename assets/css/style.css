@@ -16,11 +16,17 @@ body {
   grid-template-areas: "menu" "main" "footer";
   height: 100vh;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .body {
     grid-template-areas: "menu main main" "menu main main" "footer main main";
     grid-template-columns: 1.5fr 9fr;
     height: 140vh;
+  }
+}
+@media (min-width: 577px) and (max-width: 991px) {
+  .body {
+    grid-template-areas: "menu menu" "main main" "footer footer";
+    grid-template-rows: 1fr 9fr 1fr;
   }
 }
 
@@ -31,7 +37,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu {
     display: flex;
     flex-direction: column;
@@ -41,19 +47,21 @@ body {
 .menu .tittleMenu {
   display: flex;
 }
-.menu .tittleMenu i {
-  padding: 38px 0 0 30px;
+.menu .tittleMenu img {
+  display: flex;
+  padding: 8px 0 0 0;
 }
 .menu .tittleMenu h2 {
-  padding: 25px 0 0 10px;
+  display: flex;
+  padding: 25px 12px 0px 10px;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu .ulMenu {
     align-items: flex-end;
     padding: 10px;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu .ulMenu ul {
     display: flex;
     flex-direction: column;
@@ -65,14 +73,14 @@ body {
   display: none;
   list-style: none;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu .ulMenu ul li {
     display: flex;
     text-align: center;
     padding: 5px;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu .ulMenu ul li a {
     color: yellow;
     text-decoration: none;
@@ -84,7 +92,7 @@ body {
 .menu .iconMenu i {
   padding: 38px 30px 0 0;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .menu .iconMenu i {
     display: none;
   }
@@ -105,7 +113,7 @@ body {
   width: 98vw;
   padding: 10px;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .main .filters {
     width: 95%;
   }
@@ -115,7 +123,7 @@ body {
   width: 290px;
   height: 30px;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .main .filters select {
     width: 70%;
   }
@@ -126,13 +134,22 @@ body {
   align-items: center;
   padding: 1rem;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .main .cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 5px;
+    gap: 4px;
+  }
+}
+@media (min-width: 577px) and (max-width: 991px) {
+  .main .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 4px;
   }
 }
 .main .cards .card {
@@ -161,6 +178,7 @@ body {
   width: 80px;
   height: 30px;
   margin: 10px;
+  transition: background-color 0.3s ease-out;
 }
 .main .cards .card button:hover {
   background-color: rgb(220, 16, 210);
@@ -170,7 +188,7 @@ body {
 }
 .main .cards .cardsNone {
   display: flex;
-  display: none;
+  /*display: none;*/
   flex-direction: column;
   align-items: center;
   border: solid 2px purple;
@@ -201,6 +219,7 @@ body {
   width: 80px;
   height: 30px;
   margin: 10px;
+  transition: background-color 0.3s ease-out;
 }
 .main .cards .cardsNone button:hover {
   background-color: rgb(220, 16, 210);
@@ -208,32 +227,30 @@ body {
 .main .cards .cardsNone button:focus {
   background-color: rgb(211, 134, 211);
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .main .cards .cardsNone {
     display: flex;
   }
 }
-.main .pagMain {
-  display: flex;
-  align-items: center;
+
+.card {
+  transition: all 0.5s ease-out;
 }
-.main .pagMain table {
-  border-collapse: collapse;
-  width: 200px;
-  color: blue;
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px purple;
+  filter: brightness(95%);
 }
-.main .pagMain table tr {
-  border: solid 1px black;
-  padding: 10px;
-  text-align: center;
+
+.cardsNone {
+  transition: all 0.3s ease-out;
 }
-.main .pagMain table tr td {
-  border: solid 1px black;
-  width: 50px;
-  height: 30px;
-}
-.main .pagMain table tr td a {
-  text-decoration: none;
+
+.cardsNone:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px purple;
+  filter: brightness(95%);
 }
 
 .footer {
@@ -257,7 +274,7 @@ body {
 .footer .tittleFooter {
   padding: 5px;
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .footer .tittleFooter {
     text-align: center;
   }

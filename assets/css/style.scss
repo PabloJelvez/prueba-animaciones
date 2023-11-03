@@ -7,7 +7,8 @@ body{
     background-color: plum;
 }
 $xs: "(max-width: 576px)";
-$lg: "(min-width: 576px)";
+$lg: "(min-width: 992px)";
+$s: "(min-width: 577px) and (max-width: 991px)";
 .body{
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -29,6 +30,14 @@ $lg: "(min-width: 576px)";
     
         height: 140vh;
     }
+    @media #{$s}{
+        grid-template-areas: 
+        'menu menu'
+        'main main'
+        'footer footer'
+        ;
+        grid-template-rows: 1fr 9fr 1fr;
+    }
 }
 .menu{
     grid-area: menu;
@@ -45,15 +54,20 @@ $lg: "(min-width: 576px)";
     
     .tittleMenu{
         display: flex;
-        i{
-            padding: 38px 0 0 30px;
+        img{
+            display: flex;
+            padding: 8px 0 0 0;
+
         }
         h2{
-            padding: 25px 0 0 10px;
+        
+            display: flex;
+            padding: 25px 12px 0px 10px;
+            
         }
        
-       
-    }
+    }   
+    
     .ulMenu{
         @media #{$lg}{
            align-items: flex-end;
@@ -134,7 +148,14 @@ $lg: "(min-width: 576px)";
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 5px;
+            gap: 4px;
+        }
+        @media #{$s}{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 4px;
         }
         .card{
             display: flex;
@@ -161,6 +182,7 @@ $lg: "(min-width: 576px)";
                 width: 80px;
                 height: 30px;
                 margin: 10px;
+                transition: background-color 0.3s ease-out;
             }
             button:hover{
                 background-color: rgb(220, 16, 210);
@@ -168,10 +190,11 @@ $lg: "(min-width: 576px)";
             button:focus{
                 background-color: rgb(211, 134, 211);
             }
+            
         }
         .cardsNone{
             display: flex;
-            display: none;
+            /*display: none;*/
             flex-direction: column;
             align-items: center;
             border: solid 2px purple;
@@ -201,6 +224,7 @@ $lg: "(min-width: 576px)";
                 width: 80px;
                 height: 30px;
                 margin: 10px;
+                transition: background-color 0.3s ease-out;
             }
             button:hover{
                 background-color: rgb(220, 16, 210);
@@ -213,32 +237,23 @@ $lg: "(min-width: 576px)";
             }
         }
     }
-    .pagMain{
-        display: flex;
-        align-items: center;
-        table{
-            border-collapse: collapse;
-            width: 200px;
-            color: blue;
-            
-            tr{
-                border: solid 1px black;
-                padding: 10px;
-                text-align: center;
-               
-                td{
-                    border: solid 1px black;
-                    width: 50px;
-                    height: 30px;
-                    a{
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-    }
+}  
+.card{
+    transition: all 0.5s ease-out;
 }
-    
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px purple;
+    filter: brightness(95%);
+}
+.cardsNone{
+    transition: all 0.3s ease-out;
+}
+.cardsNone:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px purple;
+    filter: brightness(95%);
+}
 
 .footer{
     grid-area: footer;
